@@ -1,0 +1,3 @@
+/home/lis/rechuandao/build/CMakeFiles/rebuild_cache.dir
+/home/lis/rechuandao/build/CMakeFiles/heat_solver.dir
+/home/lis/rechuandao/build/CMakeFiles/edit_cache.dir
