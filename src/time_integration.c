@@ -3,7 +3,7 @@
 PetscErrorCode SetBoundaryConditions(HeatProblem *prob, PetscReal time) {
     PetscFunctionBeginUser;
     (void)time;  // 添加此行标记参数未使用
-    PetscInt i, j, idx;
+    PetscInt i, idx;
     PetscScalar *values;
     PetscInt start, end;
 
@@ -11,11 +11,10 @@ PetscErrorCode SetBoundaryConditions(HeatProblem *prob, PetscReal time) {
     PetscCall(VecGetArray(prob->u, &values));
 
     for (idx = start; idx < end; idx++) {
-        i = idx % prob->Nx;
-        j = idx / prob->Nx;
+        i = idx;
 
         // 边界条件：Dirichlet 边界条件
-        if (i == 0 || i == prob->Nx - 1 || j == 0 || j == prob->Ny - 1) {
+        if (i == 0 || i == prob->Nx - 1) {
             values[idx - start] = 0.0;
         }
     }
@@ -29,13 +28,11 @@ PetscErrorCode TimeIntegration(HeatProblem *prob, PetscInt max_steps, PetscReal 
     PetscInt step;
     PetscReal t = 0.0;
     PetscScalar *u_values, *u_prev_values;
-    PetscInt i, j, idx;
+    PetscInt i, idx;
     PetscInt start, end;
     PetscReal dx = prob->dx;
-    PetscReal dy = prob->dy;
     PetscReal dx2 = dx * dx;
-    PetscReal dy2 = dy * dy;
-    PetscReal coef = dt / (dx2 + dy2);
+    PetscReal coef = dt / dx2;
 
     // 设置时间步长
     prob->dt = dt;
@@ -55,17 +52,15 @@ PetscErrorCode TimeIntegration(HeatProblem *prob, PetscInt max_steps, PetscReal 
 
         // 内部点的显式时间积分
         for (idx = start; idx < end; idx++) {
-            i = idx % prob->Nx;
-            j = idx / prob->Nx;
+            i = idx;
 
             // 跳过边界点
-            if (i == 0 || i == prob->Nx - 1 || j == 0 || j == prob->Ny - 1) {
+            if (i == 0 || i == prob->Nx - 1) {
                 continue;
             }
 
             // 计算拉普拉斯算子
-            PetscReal laplacian = (u_prev_values[idx - 1 - start] + u_prev_values[idx + 1 - start] - 2.0 * u_prev_values[idx - start]) / dx2 +
-                                  (u_prev_values[idx - prob->Nx - start] + u_prev_values[idx + prob->Nx - start] - 2.0 * u_prev_values[idx - start]) / dy2;
+            PetscReal laplacian = (u_prev_values[idx - 1 - start] + u_prev_values[idx + 1 - start] - 2.0 * u_prev_values[idx - start]) / dx2;
 
             // 时间积分
             u_values[idx - start] = u_prev_values[idx - start] + coef * laplacian;

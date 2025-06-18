@@ -1110,175 +1110,175 @@ heat_problem.h
 heat_problem.h
 /home/lis/rechuandao/src/heat_problem.h
 
-/usr/include/hdf5/serial/H5ACpublic.h
+/usr/include/hdf5/openmpi/H5ACpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Cpublic.h
-/usr/include/hdf5/serial/H5Cpublic.h
+/usr/include/hdf5/openmpi/H5Cpublic.h
 
-/usr/include/hdf5/serial/H5Apublic.h
+/usr/include/hdf5/openmpi/H5Apublic.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Opublic.h
-/usr/include/hdf5/serial/H5Opublic.h
+/usr/include/hdf5/openmpi/H5Opublic.h
 H5Tpublic.h
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 
-/usr/include/hdf5/serial/H5Cpublic.h
+/usr/include/hdf5/openmpi/H5Cpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 
-/usr/include/hdf5/serial/H5Dpublic.h
+/usr/include/hdf5/openmpi/H5Dpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Epubgen.h
+/usr/include/hdf5/openmpi/H5Epubgen.h
 
-/usr/include/hdf5/serial/H5Epublic.h
+/usr/include/hdf5/openmpi/H5Epublic.h
 stdio.h
 -
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Epubgen.h
-/usr/include/hdf5/serial/H5Epubgen.h
+/usr/include/hdf5/openmpi/H5Epubgen.h
 
-/usr/include/hdf5/serial/H5FDcore.h
+/usr/include/hdf5/openmpi/H5FDcore.h
 
-/usr/include/hdf5/serial/H5FDdirect.h
+/usr/include/hdf5/openmpi/H5FDdirect.h
 
-/usr/include/hdf5/serial/H5FDfamily.h
+/usr/include/hdf5/openmpi/H5FDfamily.h
 
-/usr/include/hdf5/serial/H5FDlog.h
+/usr/include/hdf5/openmpi/H5FDlog.h
 
-/usr/include/hdf5/serial/H5FDmpi.h
+/usr/include/hdf5/openmpi/H5FDmpi.h
 H5FDmpio.h
-/usr/include/hdf5/serial/H5FDmpio.h
+/usr/include/hdf5/openmpi/H5FDmpio.h
 
-/usr/include/hdf5/serial/H5FDmpio.h
+/usr/include/hdf5/openmpi/H5FDmpio.h
 
-/usr/include/hdf5/serial/H5FDmulti.h
+/usr/include/hdf5/openmpi/H5FDmulti.h
 
-/usr/include/hdf5/serial/H5FDpublic.h
+/usr/include/hdf5/openmpi/H5FDpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Fpublic.h
-/usr/include/hdf5/serial/H5Fpublic.h
+/usr/include/hdf5/openmpi/H5Fpublic.h
 
-/usr/include/hdf5/serial/H5FDsec2.h
+/usr/include/hdf5/openmpi/H5FDsec2.h
 
-/usr/include/hdf5/serial/H5FDstdio.h
+/usr/include/hdf5/openmpi/H5FDstdio.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Fpublic.h
+/usr/include/hdf5/openmpi/H5Fpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5ACpublic.h
-/usr/include/hdf5/serial/H5ACpublic.h
+/usr/include/hdf5/openmpi/H5ACpublic.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Gpublic.h
+/usr/include/hdf5/openmpi/H5Gpublic.h
 sys/types.h
 -
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Lpublic.h
-/usr/include/hdf5/serial/H5Lpublic.h
+/usr/include/hdf5/openmpi/H5Lpublic.h
 H5Opublic.h
-/usr/include/hdf5/serial/H5Opublic.h
+/usr/include/hdf5/openmpi/H5Opublic.h
 H5Tpublic.h
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 
-/usr/include/hdf5/serial/H5Lpublic.h
+/usr/include/hdf5/openmpi/H5Lpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Tpublic.h
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 
-/usr/include/hdf5/serial/H5MMpublic.h
+/usr/include/hdf5/openmpi/H5MMpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 
-/usr/include/hdf5/serial/H5Opublic.h
+/usr/include/hdf5/openmpi/H5Opublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Lpublic.h
-/usr/include/hdf5/serial/H5Lpublic.h
+/usr/include/hdf5/openmpi/H5Lpublic.h
 
-/usr/include/hdf5/serial/H5PLpublic.h
+/usr/include/hdf5/openmpi/H5PLpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 
-/usr/include/hdf5/serial/H5Ppublic.h
+/usr/include/hdf5/openmpi/H5Ppublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5ACpublic.h
-/usr/include/hdf5/serial/H5ACpublic.h
+/usr/include/hdf5/openmpi/H5ACpublic.h
 H5Dpublic.h
-/usr/include/hdf5/serial/H5Dpublic.h
+/usr/include/hdf5/openmpi/H5Dpublic.h
 H5Fpublic.h
-/usr/include/hdf5/serial/H5Fpublic.h
+/usr/include/hdf5/openmpi/H5Fpublic.h
 H5FDpublic.h
-/usr/include/hdf5/serial/H5FDpublic.h
+/usr/include/hdf5/openmpi/H5FDpublic.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Lpublic.h
-/usr/include/hdf5/serial/H5Lpublic.h
+/usr/include/hdf5/openmpi/H5Lpublic.h
 H5Opublic.h
-/usr/include/hdf5/serial/H5Opublic.h
+/usr/include/hdf5/openmpi/H5Opublic.h
 H5MMpublic.h
-/usr/include/hdf5/serial/H5MMpublic.h
+/usr/include/hdf5/openmpi/H5MMpublic.h
 H5Tpublic.h
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 H5Zpublic.h
-/usr/include/hdf5/serial/H5Zpublic.h
+/usr/include/hdf5/openmpi/H5Zpublic.h
 
-/usr/include/hdf5/serial/H5Rpublic.h
+/usr/include/hdf5/openmpi/H5Rpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Gpublic.h
-/usr/include/hdf5/serial/H5Gpublic.h
+/usr/include/hdf5/openmpi/H5Gpublic.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Spublic.h
+/usr/include/hdf5/openmpi/H5Spublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 
-/usr/include/hdf5/serial/H5Zpublic.h
+/usr/include/hdf5/openmpi/H5Zpublic.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 
-/usr/include/hdf5/serial/H5api_adpt.h
+/usr/include/hdf5/openmpi/H5api_adpt.h
 
-/usr/include/hdf5/serial/H5pubconf.h
+/usr/include/hdf5/openmpi/H5pubconf.h
 
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5pubconf.h
-/usr/include/hdf5/serial/H5pubconf.h
+/usr/include/hdf5/openmpi/H5pubconf.h
 H5version.h
-/usr/include/hdf5/serial/H5version.h
+/usr/include/hdf5/openmpi/H5version.h
 features.h
 -
 sys/types.h
@@ -1298,65 +1298,65 @@ mpi.h
 mpio.h
 -
 H5api_adpt.h
-/usr/include/hdf5/serial/H5api_adpt.h
+/usr/include/hdf5/openmpi/H5api_adpt.h
 stdbool.h
 -
 
-/usr/include/hdf5/serial/H5version.h
+/usr/include/hdf5/openmpi/H5version.h
 
-/usr/include/hdf5/serial/hdf5.h
+/usr/include/hdf5/openmpi/hdf5.h
 H5public.h
-/usr/include/hdf5/serial/H5public.h
+/usr/include/hdf5/openmpi/H5public.h
 H5Apublic.h
-/usr/include/hdf5/serial/H5Apublic.h
+/usr/include/hdf5/openmpi/H5Apublic.h
 H5ACpublic.h
-/usr/include/hdf5/serial/H5ACpublic.h
+/usr/include/hdf5/openmpi/H5ACpublic.h
 H5Dpublic.h
-/usr/include/hdf5/serial/H5Dpublic.h
+/usr/include/hdf5/openmpi/H5Dpublic.h
 H5Epublic.h
-/usr/include/hdf5/serial/H5Epublic.h
+/usr/include/hdf5/openmpi/H5Epublic.h
 H5Fpublic.h
-/usr/include/hdf5/serial/H5Fpublic.h
+/usr/include/hdf5/openmpi/H5Fpublic.h
 H5FDpublic.h
-/usr/include/hdf5/serial/H5FDpublic.h
+/usr/include/hdf5/openmpi/H5FDpublic.h
 H5Gpublic.h
-/usr/include/hdf5/serial/H5Gpublic.h
+/usr/include/hdf5/openmpi/H5Gpublic.h
 H5Ipublic.h
-/usr/include/hdf5/serial/H5Ipublic.h
+/usr/include/hdf5/openmpi/H5Ipublic.h
 H5Lpublic.h
-/usr/include/hdf5/serial/H5Lpublic.h
+/usr/include/hdf5/openmpi/H5Lpublic.h
 H5MMpublic.h
-/usr/include/hdf5/serial/H5MMpublic.h
+/usr/include/hdf5/openmpi/H5MMpublic.h
 H5Opublic.h
-/usr/include/hdf5/serial/H5Opublic.h
+/usr/include/hdf5/openmpi/H5Opublic.h
 H5Ppublic.h
-/usr/include/hdf5/serial/H5Ppublic.h
+/usr/include/hdf5/openmpi/H5Ppublic.h
 H5PLpublic.h
-/usr/include/hdf5/serial/H5PLpublic.h
+/usr/include/hdf5/openmpi/H5PLpublic.h
 H5Rpublic.h
-/usr/include/hdf5/serial/H5Rpublic.h
+/usr/include/hdf5/openmpi/H5Rpublic.h
 H5Spublic.h
-/usr/include/hdf5/serial/H5Spublic.h
+/usr/include/hdf5/openmpi/H5Spublic.h
 H5Tpublic.h
-/usr/include/hdf5/serial/H5Tpublic.h
+/usr/include/hdf5/openmpi/H5Tpublic.h
 H5Zpublic.h
-/usr/include/hdf5/serial/H5Zpublic.h
+/usr/include/hdf5/openmpi/H5Zpublic.h
 H5FDcore.h
-/usr/include/hdf5/serial/H5FDcore.h
+/usr/include/hdf5/openmpi/H5FDcore.h
 H5FDdirect.h
-/usr/include/hdf5/serial/H5FDdirect.h
+/usr/include/hdf5/openmpi/H5FDdirect.h
 H5FDfamily.h
-/usr/include/hdf5/serial/H5FDfamily.h
+/usr/include/hdf5/openmpi/H5FDfamily.h
 H5FDlog.h
-/usr/include/hdf5/serial/H5FDlog.h
+/usr/include/hdf5/openmpi/H5FDlog.h
 H5FDmpi.h
-/usr/include/hdf5/serial/H5FDmpi.h
+/usr/include/hdf5/openmpi/H5FDmpi.h
 H5FDmulti.h
-/usr/include/hdf5/serial/H5FDmulti.h
+/usr/include/hdf5/openmpi/H5FDmulti.h
 H5FDsec2.h
-/usr/include/hdf5/serial/H5FDsec2.h
+/usr/include/hdf5/openmpi/H5FDsec2.h
 H5FDstdio.h
-/usr/include/hdf5/serial/H5FDstdio.h
+/usr/include/hdf5/openmpi/H5FDstdio.h
 H5FDwindows.h
-/usr/include/hdf5/serial/H5FDwindows.h
+/usr/include/hdf5/openmpi/H5FDwindows.h
 

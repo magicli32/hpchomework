@@ -8,9 +8,9 @@ int main(int argc, char **argv) {
     HeatProblem prob;
     PetscInt step = 0;
     PetscReal current_time = 0.0;
-    PetscReal dt =0.001;
-    PetscInt max_steps=1000;
-   char restart_file[100] = "";
+    PetscReal dt = 0.001;
+    PetscInt max_steps = 1000;
+    char restart_file[100] = "";
     
     // 初始化PETSc环境
     PetscCall(PetscInitialize(&argc, &argv, NULL, "Heat Equation Solver"));
@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
     // 处理命令行参数
     PetscOptionsBegin(PETSC_COMM_WORLD, NULL, "Heat Solver Options", "");
     PetscCall(PetscOptionsInt("-nx", "Number of grid points in x-direction", "", 100, &prob.Nx, NULL));
-    PetscCall(PetscOptionsInt("-ny", "Number of grid points in y-direction", "", 100, &prob.Ny, NULL));
     PetscCall(PetscOptionsReal("-dt", "Time step", "", 0.001, &prob.dt, NULL));
     PetscCall(PetscOptionsReal("-tfinal", "Final time", "", 1.0, &prob.Tfinal, NULL));
     PetscCall(PetscOptionsString("-restart_file", "Restart file", "", restart_file, restart_file, 100, NULL));
@@ -29,9 +28,7 @@ int main(int argc, char **argv) {
     prob.c = 1.0;      // 热容量
     prob.kappa = 1.0;  // 热导率
     prob.Lx = 1.0;     // 区域x方向长度
-    prob.Ly = 1.0;     // 区域y方向长度
     prob.dx = prob.Lx / prob.Nx;
-    prob.dy = prob.Ly / prob.Ny;
     
     // 初始化问题
     PetscCall(InitializeProblem(&prob));

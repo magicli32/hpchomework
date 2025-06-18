@@ -57,28 +57,28 @@ include CMakeFiles/heat_solver.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/heat_solver.dir/flags.make
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o: CMakeFiles/heat_solver.dir/flags.make
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o: ../src/hdf5_restart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lis/rechuandao/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o   -c /home/lis/rechuandao/src/hdf5_restart.c
+CMakeFiles/heat_solver.dir/src/main.c.o: CMakeFiles/heat_solver.dir/flags.make
+CMakeFiles/heat_solver.dir/src/main.c.o: ../src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lis/rechuandao/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/heat_solver.dir/src/main.c.o"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heat_solver.dir/src/main.c.o   -c /home/lis/rechuandao/src/main.c
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lis/rechuandao/src/hdf5_restart.c > CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i
+CMakeFiles/heat_solver.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heat_solver.dir/src/main.c.i"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lis/rechuandao/src/main.c > CMakeFiles/heat_solver.dir/src/main.c.i
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lis/rechuandao/src/hdf5_restart.c -o CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s
+CMakeFiles/heat_solver.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heat_solver.dir/src/main.c.s"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lis/rechuandao/src/main.c -o CMakeFiles/heat_solver.dir/src/main.c.s
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires:
+CMakeFiles/heat_solver.dir/src/main.c.o.requires:
 
-.PHONY : CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
+.PHONY : CMakeFiles/heat_solver.dir/src/main.c.o.requires
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
-	$(MAKE) -f CMakeFiles/heat_solver.dir/build.make CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides.build
-.PHONY : CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides
+CMakeFiles/heat_solver.dir/src/main.c.o.provides: CMakeFiles/heat_solver.dir/src/main.c.o.requires
+	$(MAKE) -f CMakeFiles/heat_solver.dir/build.make CMakeFiles/heat_solver.dir/src/main.c.o.provides.build
+.PHONY : CMakeFiles/heat_solver.dir/src/main.c.o.provides
 
-CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides.build: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o
+CMakeFiles/heat_solver.dir/src/main.c.o.provides.build: CMakeFiles/heat_solver.dir/src/main.c.o
 
 
 CMakeFiles/heat_solver.dir/src/initialization.c.o: CMakeFiles/heat_solver.dir/flags.make
@@ -105,28 +105,28 @@ CMakeFiles/heat_solver.dir/src/initialization.c.o.provides: CMakeFiles/heat_solv
 CMakeFiles/heat_solver.dir/src/initialization.c.o.provides.build: CMakeFiles/heat_solver.dir/src/initialization.c.o
 
 
-CMakeFiles/heat_solver.dir/src/main.c.o: CMakeFiles/heat_solver.dir/flags.make
-CMakeFiles/heat_solver.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lis/rechuandao/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/heat_solver.dir/src/main.c.o"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heat_solver.dir/src/main.c.o   -c /home/lis/rechuandao/src/main.c
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o: CMakeFiles/heat_solver.dir/flags.make
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o: ../src/hdf5_restart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lis/rechuandao/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o   -c /home/lis/rechuandao/src/hdf5_restart.c
 
-CMakeFiles/heat_solver.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heat_solver.dir/src/main.c.i"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lis/rechuandao/src/main.c > CMakeFiles/heat_solver.dir/src/main.c.i
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lis/rechuandao/src/hdf5_restart.c > CMakeFiles/heat_solver.dir/src/hdf5_restart.c.i
 
-CMakeFiles/heat_solver.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heat_solver.dir/src/main.c.s"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lis/rechuandao/src/main.c -o CMakeFiles/heat_solver.dir/src/main.c.s
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lis/rechuandao/src/hdf5_restart.c -o CMakeFiles/heat_solver.dir/src/hdf5_restart.c.s
 
-CMakeFiles/heat_solver.dir/src/main.c.o.requires:
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires:
 
-.PHONY : CMakeFiles/heat_solver.dir/src/main.c.o.requires
+.PHONY : CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
 
-CMakeFiles/heat_solver.dir/src/main.c.o.provides: CMakeFiles/heat_solver.dir/src/main.c.o.requires
-	$(MAKE) -f CMakeFiles/heat_solver.dir/build.make CMakeFiles/heat_solver.dir/src/main.c.o.provides.build
-.PHONY : CMakeFiles/heat_solver.dir/src/main.c.o.provides
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
+	$(MAKE) -f CMakeFiles/heat_solver.dir/build.make CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides.build
+.PHONY : CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides
 
-CMakeFiles/heat_solver.dir/src/main.c.o.provides.build: CMakeFiles/heat_solver.dir/src/main.c.o
+CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.provides.build: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o
 
 
 CMakeFiles/heat_solver.dir/src/time_integration.c.o: CMakeFiles/heat_solver.dir/flags.make
@@ -155,25 +155,25 @@ CMakeFiles/heat_solver.dir/src/time_integration.c.o.provides.build: CMakeFiles/h
 
 # Object files for target heat_solver
 heat_solver_OBJECTS = \
-"CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o" \
-"CMakeFiles/heat_solver.dir/src/initialization.c.o" \
 "CMakeFiles/heat_solver.dir/src/main.c.o" \
+"CMakeFiles/heat_solver.dir/src/initialization.c.o" \
+"CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o" \
 "CMakeFiles/heat_solver.dir/src/time_integration.c.o"
 
 # External object files for target heat_solver
 heat_solver_EXTERNAL_OBJECTS =
 
-bin/heat_solver: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o
-bin/heat_solver: CMakeFiles/heat_solver.dir/src/initialization.c.o
 bin/heat_solver: CMakeFiles/heat_solver.dir/src/main.c.o
+bin/heat_solver: CMakeFiles/heat_solver.dir/src/initialization.c.o
+bin/heat_solver: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o
 bin/heat_solver: CMakeFiles/heat_solver.dir/src/time_integration.c.o
 bin/heat_solver: CMakeFiles/heat_solver.dir/build.make
-bin/heat_solver: /usr/lib/x86_64-linux-gnu/hdf5/serial/libhdf5.so
-bin/heat_solver: /usr/lib/x86_64-linux-gnu/libpthread.so
+bin/heat_solver: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5.so
 bin/heat_solver: /usr/lib/x86_64-linux-gnu/libsz.so
 bin/heat_solver: /usr/lib/x86_64-linux-gnu/libz.so
 bin/heat_solver: /usr/lib/x86_64-linux-gnu/libdl.so
 bin/heat_solver: /usr/lib/x86_64-linux-gnu/libm.so
+bin/heat_solver: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5_hl.so
 bin/heat_solver: /home/lis/petsc/arch-linux-c-debug/lib/libmpi.so
 bin/heat_solver: /home/lis/petsc/arch-linux-c-debug/lib/libpetsc.so
 bin/heat_solver: CMakeFiles/heat_solver.dir/link.txt
@@ -185,9 +185,9 @@ CMakeFiles/heat_solver.dir/build: bin/heat_solver
 
 .PHONY : CMakeFiles/heat_solver.dir/build
 
-CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
-CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/initialization.c.o.requires
 CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/main.c.o.requires
+CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/initialization.c.o.requires
+CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/hdf5_restart.c.o.requires
 CMakeFiles/heat_solver.dir/requires: CMakeFiles/heat_solver.dir/src/time_integration.c.o.requires
 
 .PHONY : CMakeFiles/heat_solver.dir/requires

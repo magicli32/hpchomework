@@ -7,8 +7,8 @@ PetscErrorCode SaveToHDF5(HeatProblem *prob, PetscInt step) {
     char filename[100];
     PetscScalar *values;
     PetscInt my_rank;
-    hsize_t dims[2], global_dims[2];
-    PetscInt offset_int[2], dims_int[2];
+    hsize_t dims[1], global_dims[1];
+    PetscInt offset_int[1], dims_int[1];
     herr_t status;
     
     // 获取进程ID
@@ -35,16 +35,8 @@ PetscErrorCode SaveToHDF5(HeatProblem *prob, PetscInt step) {
         H5Dwrite(dataset_id, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &prob->Nx);
         H5Dclose(dataset_id);
         
-        dataset_id = H5Dcreate(file_id, "/Ny", H5T_NATIVE_INT, dataspace_id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-        H5Dwrite(dataset_id, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &prob->Ny);
-        H5Dclose(dataset_id);
-        
         dataset_id = H5Dcreate(file_id, "/dx", H5T_NATIVE_DOUBLE, dataspace_id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
         H5Dwrite(dataset_id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, &prob->dx);
-        H5Dclose(dataset_id);
-        
-        dataset_id = H5Dcreate(file_id, "/dy", H5T_NATIVE_DOUBLE, dataspace_id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-        H5Dwrite(dataset_id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, &prob->dy);
         H5Dclose(dataset_id);
         
         dataset_id = H5Dcreate(file_id, "/dt", H5T_NATIVE_DOUBLE, dataspace_id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
@@ -64,15 +56,13 @@ PetscErrorCode SaveToHDF5(HeatProblem *prob, PetscInt step) {
     // 获取本地向量大小和索引
     PetscCall(VecGetOwnershipRange(prob->u, &offset_int[0], &dims_int[0]));
     dims[0] = dims_int[0];
-    dims[1] = 1;
     
     // 创建本地数据空间
-    dataspace_id = H5Screate_simple(2, dims, NULL);
+    dataspace_id = H5Screate_simple(1, dims, NULL);
     
     // 创建全局数据空间
-    global_dims[0] = prob->Nx * prob->Ny;
-    global_dims[1] = 1;
-    global_dataspace_id = H5Screate_simple(2, global_dims, NULL);
+    global_dims[0] = prob->Nx;
+    global_dataspace_id = H5Screate_simple(1, global_dims, NULL);
     
     // 创建数据集传输属性列表（使用集体IO）
     plist_id = H5Pcreate(H5P_DATASET_XFER);
@@ -86,8 +76,7 @@ PetscErrorCode SaveToHDF5(HeatProblem *prob, PetscInt step) {
     PetscCall(VecGetArray(prob->u, &values));
     
     // 设置超体元选择（指定本进程负责的数据区域）
-    offset_int[1] = 0;
-    hsize_t count[2] = {dims[0], 1};
+    hsize_t count[1] = {dims[0]};
     H5Sselect_hyperslab(global_dataspace_id, H5S_SELECT_SET, (const hsize_t*)offset_int, NULL, count, NULL);
     
     // 集体写入数据
@@ -114,8 +103,8 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
     PetscFunctionBeginUser;
     hid_t file_id, dataset_id, dataspace_id, global_dataspace_id, plist_id;
     PetscScalar *values;
-    hsize_t dims[2];
-    PetscInt offset_int[2], dims_int[2];
+    hsize_t dims[1];
+    PetscInt offset_int[1], dims_int[1];
     herr_t status;
     int mpi_err;
     
@@ -129,8 +118,8 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
     
     // 读取基本参数（只需要主进程读取，然后广播到所有进程）
     {
-        PetscInt Nx, Ny, step;
-        PetscReal dx, dy, dt;
+        PetscInt Nx, step;
+        PetscReal dx, dt;
         hid_t dataset_id;
         
         if (PetscGlobalRank == 0) {
@@ -138,16 +127,8 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
             H5Dread(dataset_id, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &Nx);
             H5Dclose(dataset_id);
             
-            dataset_id = H5Dopen(file_id, "/Ny", H5P_DEFAULT);
-            H5Dread(dataset_id, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &Ny);
-            H5Dclose(dataset_id);
-            
             dataset_id = H5Dopen(file_id, "/dx", H5P_DEFAULT);
             H5Dread(dataset_id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, &dx);
-            H5Dclose(dataset_id);
-            
-            dataset_id = H5Dopen(file_id, "/dy", H5P_DEFAULT);
-            H5Dread(dataset_id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, &dy);
             H5Dclose(dataset_id);
             
             dataset_id = H5Dopen(file_id, "/dt", H5P_DEFAULT);
@@ -163,13 +144,7 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
         mpi_err = MPI_Bcast(&Nx, 1, MPI_INT, 0, PETSC_COMM_WORLD);
         if (mpi_err != MPI_SUCCESS) PetscPrintf(PETSC_COMM_WORLD, "MPI_Bcast error\n");
         
-        mpi_err = MPI_Bcast(&Ny, 1, MPI_INT, 0, PETSC_COMM_WORLD);
-        if (mpi_err != MPI_SUCCESS) PetscPrintf(PETSC_COMM_WORLD, "MPI_Bcast error\n");
-        
         mpi_err = MPI_Bcast(&dx, 1, MPI_DOUBLE, 0, PETSC_COMM_WORLD);
-        if (mpi_err != MPI_SUCCESS) PetscPrintf(PETSC_COMM_WORLD, "MPI_Bcast error\n");
-        
-        mpi_err = MPI_Bcast(&dy, 1, MPI_DOUBLE, 0, PETSC_COMM_WORLD);
         if (mpi_err != MPI_SUCCESS) PetscPrintf(PETSC_COMM_WORLD, "MPI_Bcast error\n");
         
         mpi_err = MPI_Bcast(&dt, 1, MPI_DOUBLE, 0, PETSC_COMM_WORLD);
@@ -179,7 +154,7 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
         if (mpi_err != MPI_SUCCESS) PetscPrintf(PETSC_COMM_WORLD, "MPI_Bcast error\n");
         
         // 检查参数是否匹配
-        if (Nx != prob->Nx || Ny != prob->Ny || dx != prob->dx || dy != prob->dy || dt != prob->dt) {
+        if (Nx != prob->Nx || dx != prob->dx || dt != prob->dt) {
             PetscPrintf(PETSC_COMM_WORLD, "Warning: Grid parameters from restart file do not match current settings!\n");
         }
     }
@@ -187,10 +162,9 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
     // 获取本地向量大小和索引
     PetscCall(VecGetOwnershipRange(prob->u, &offset_int[0], &dims_int[0]));
     dims[0] = dims_int[0];
-    dims[1] = 1;
     
     // 创建本地数据空间
-    dataspace_id = H5Screate_simple(2, dims, NULL);
+    dataspace_id = H5Screate_simple(1, dims, NULL);
     
     // 打开数据集
     dataset_id = H5Dopen(file_id, "/solution", H5P_DEFAULT);
@@ -206,8 +180,7 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
     PetscCall(VecGetArray(prob->u, &values));
     
     // 设置超体元选择（指定本进程负责读取的数据区域）
-    offset_int[1] = 0;
-    hsize_t count[2] = {dims[0], 1};
+    hsize_t count[1] = {dims[0]};
     H5Sselect_hyperslab(global_dataspace_id, H5S_SELECT_SET, (const hsize_t*)offset_int, NULL, count, NULL);
     
     // 集体读取数据
@@ -233,4 +206,5 @@ PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename) {
     
     PetscFunctionReturn(0);
 }
+
 

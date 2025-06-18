@@ -6,10 +6,10 @@
 
 typedef struct {
     PetscReal rho, c, kappa;  // 物理参数
-    PetscInt Nx, Ny;         // 网格点数
-    PetscReal Lx, Ly;        // 区域尺寸
-    PetscReal dx, dy, dt;    // 网格步长和时间步长
-    PetscReal Tfinal;        // 终止时间
+    PetscInt Nx;         // 网格点数
+    PetscReal Lx;        // 区域尺寸
+    PetscReal dx, dt;    // 网格步长和时间步长
+    PetscReal Tfinal;    // 终止时间
     
     // PETSc数据结构
     Mat A;                    // 系数矩阵
@@ -26,5 +26,6 @@ PetscErrorCode SaveToHDF5(HeatProblem *prob, PetscInt step);
 PetscErrorCode LoadFromHDF5(HeatProblem *prob, char *filename);
 
 #endif /* HEAT_PROBLEM_H */
+
 
 
