@@ -20,12 +20,14 @@ int main(int argc,char **args)
   PetscScalar    value[3], u0,f0, zero=0.0;
   /* u0-initial value of u, f0-intial value of f */
 
-  assert(dx*(m-1) == 1);
-  assert(dt*n == t);
-  assert(dt <= 0.5*dx*dx/k);  
-
   ierr = PetscInitialize(&argc,&args,(char*)0,help);if (ierr) return ierr;
   ierr = PetscOptionsGetInt(NULL,NULL,"-n",&n,NULL);CHKERRQ(ierr);
+  dt = t/(PetscReal)n;
+  r = k*dt/(dx*dx);
+
+  assert(dx*(m-1) == 1);
+  assert(dt*n == t);
+
   ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&rank);CHKERRQ(ierr);
   /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
          Compute the matrix and right-hand-side vector that define
@@ -97,13 +99,13 @@ int main(int argc,char **args)
   */
   if (!rstart) {
     rstart = 1;
-    i      = 0; col[0] = 0; col[1] = 1; value[0] = 1.0+2*r; value[1] = -r;
-    ierr   = MatSetValues(A,1,&i,2,col,value,INSERT_VALUES);CHKERRQ(ierr);
+    i      = 0; col[0] = 0; value[0] = 1.0;
+    ierr   = MatSetValues(A,1,&i,1,col,value,INSERT_VALUES);CHKERRQ(ierr);
   }
   if (rend == m) {
     rend = m-1;
-    i    = m-1; col[0] = m-2; col[1] = m-1; value[0] = -r; value[1] = 1.0+2*r;
-    ierr = MatSetValues(A,1,&i,2,col,value,INSERT_VALUES);CHKERRQ(ierr);
+    i    = m-1; col[0] = m-1; value[0] = 1.0;
+    ierr = MatSetValues(A,1,&i,1,col,value,INSERT_VALUES);CHKERRQ(ierr);
   }
 
   /* Set entries corresponding to the mesh interior */
@@ -129,11 +131,19 @@ int main(int argc,char **args)
   while (nt < n){
     ierr = VecCopy(f,ft);CHKERRQ(ierr);
     ierr = VecAYPX(ft,(PetscScalar)dt,u);CHKERRQ(ierr);
+    i = 0;
+    ierr = VecSetValues(ft,1,&i,&zero,INSERT_VALUES);CHKERRQ(ierr);
+    i = m-1;
+    ierr = VecSetValues(ft,1,&i,&zero,INSERT_VALUES);CHKERRQ(ierr);
+    ierr = VecAssemblyBegin(ft);CHKERRQ(ierr);
+    ierr = VecAssemblyEnd(ft);CHKERRQ(ierr);
     ierr = KSPSolve(ksp,ft,us);CHKERRQ(ierr);
     i = 0;
     ierr = VecSetValues(us,1,&i,&zero,INSERT_VALUES);CHKERRQ(ierr);
     i = m-1;
     ierr = VecSetValues(us,1,&i,&zero,INSERT_VALUES);CHKERRQ(ierr);
+    ierr = VecAssemblyBegin(us);CHKERRQ(ierr);
+    ierr = VecAssemblyEnd(us);CHKERRQ(ierr);
     ierr = VecCopy(us,u);CHKERRQ(ierr);
     nt++;
     /*if (nt % 50 == 0){
@@ -143,6 +153,7 @@ int main(int argc,char **args)
     if (nt == n)
       ierr = VecView(us,PETSC_VIEWER_STDOUT_WORLD);CHKERRQ(ierr);
   }
+  ierr = KSPDestroy(&ksp);CHKERRQ(ierr);
   ierr = VecDestroy(&u);CHKERRQ(ierr); ierr = VecDestroy(&us);CHKERRQ(ierr);
   ierr = VecDestroy(&f);CHKERRQ(ierr); ierr = VecDestroy(&ft);CHKERRQ(ierr);
   ierr = MatDestroy(&A);CHKERRQ(ierr);
